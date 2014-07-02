@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <CSL_MostViewed>
+      <active>true</active>
+      <codePool>community</codePool>
+    </CSL_MostViewed>
+  </modules>
+</config>

@@ -1,0 +1,11 @@
+<layout version="0.1.0">    
+     <ruta_index_index>
+        <label>Most Viewed List</label>
+        <reference name="left">
+            <block type="catalog/layer_view" name="catalog.leftnav" after="currency" template="catalog/layer/view.phtml"/>
+        </reference>
+           <reference name="content">
+                <block type="mostviewed/mostviewed" name="MostViewed List" template="mostviewed/list.phtml" />
+           </reference>
+      </ruta_index_index>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <config>
+     <modules>
+        <CSL_MostViewed>
+          <version>1.0.0</version>
+        </CSL_MostViewed>
+     </modules>
+	 <global>
+            <blocks>
+               <mostviewed>
+                        <class>CSL_MostViewed_Block</class>
+               </mostviewed>
+             </blocks>
+	 </global>
+     <frontend>
+       <routers>
+          <ruta>
+              <use>standard</use>
+              <args>
+                 <module>CSL_MostViewed</module>
+                 <frontName>mostviewed</frontName>
+              </args>
+           </ruta>
+       </routers>
+	   <layout>
+            <updates>
+                 <mostviewed>
+                          <file>csl-mostviewed.xml</file>
+                  </mostviewed>
+            </updates>
+		</layout>
+    </frontend>
+</config>
