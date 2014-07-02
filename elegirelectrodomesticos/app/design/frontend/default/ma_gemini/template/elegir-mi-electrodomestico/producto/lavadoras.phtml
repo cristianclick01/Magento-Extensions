@@ -1,0 +1,212 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div class="panel panel-primary sombrear_cuadros panel-cuestionario">
+    <div class="panel-heading">Contesta a las siguientes preguntas y nosotros te daremos la mejor opci&oacute;n.</div>
+    <div class="panel-body">
+        
+        <div id="pregunta-1" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> QUE TIPO DE LAVADORA PREFIERES?</p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="lavadora" id="lava1" value="1" checked>
+                          <p>De carga frontal</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="lavadora" id="lava2" value="2">
+                          <p>De carga superior</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="lavadora" id="lava3" value="3">
+                          <p>Integrable</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-1', 'pregunta-2')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/eleccion.jpg') ?>" width="235px" class="qimage "/>
+            </div>
+        </div>
+        
+        
+        <div id="pregunta-2" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> CUANTOS SOIS EN CASA? </p>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="casa" id="casa1" value="1" checked>
+                            <p>De 1 a 2 personas</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="casa" id="casa2" value="2">
+                          <p>3 personas</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="casa" id="casa3" value="3">
+                          <p>4 personas</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="casa" id="casa4" value="4">
+                          <p>M&aacute;s de 5 personas</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-2', 'pregunta-1')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-2', 'pregunta-3')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/familia.png') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+        
+        <div id="pregunta-3" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> TIENES SECADORA EN EL DOMICILIO DONDE IRÁ LA NUEVA LAVADORA?</p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="secadora" id="seca1" value="1" checked>
+                          <p>Si</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="secadora" id="seca2" value="2">
+                          <p>No</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-3', 'pregunta-2')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-3', 'pregunta-4')" />
+
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/pinzas.png') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+
+
+        <div id="pregunta-4" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> QUE LE DAS MAS IMPORTANCIA AL COMPRAR TU NUEVA LAVADORA? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="nuevo" id="nuevo1" value="1" checked>
+                          <p>Prefiero gastar m&aacute;s al comprar mi lavadora y ahorrar en su consumo.</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="nuevo" id="nuevo2" value="2">
+                          <p>Quiero que consuma poco pero prefiero economizar en la compra</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="nuevo" id="nuevo3" value="3">
+                          <p>Prefiero comprar una lavadora econ&oacute;mica aunque consuma m&aacute;s</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="nuevo" id="nuevo4" value="4">
+                          <p>No me importa el consumo, quiero ahorrar lo m&aacute;ximo en mi compra.</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-4', 'pregunta-3')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-4', 'pregunta-5')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/comprar.jpg') ?>" width="350px" class="qimage "/>
+            </div>
+        </div>
+        
+
+        <div id="pregunta-5" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> TE PREOCUPA EL MEDIO AMBIENTE? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco1" value="1" checked>
+                          <p>Si</p>
+                        </label>
+                     </div>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco2" value="2" checked>
+                          <p>No</p>
+                        </label>
+                     </div>
+                    <div id="loading"></div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-5', 'pregunta-4')" />
+                    <button class="btn btn-primary" onclick="getRespuestas()"><span class="glyphicon glyphicon-play"></span>Ver resultados</button>
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/ahorro_energia.png') ?>" width="200px" class="qimage "/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<?php //LLAMAMOS AL METODO SAVE DEL CONTROLADOR DE LA EXTENSION PASANDOLE VIA AJAX LAS RESPUESTAS ?>
+<script type="text/javascript">
+    function getRespuestas(){
+        var lava = jQuery("input[name='lavadora']:checked").val();
+        var casa = jQuery("input[name='casa']:checked").val();
+        var secadora = jQuery("input[name='secadora']:checked").val();
+        var nuevo = jQuery("input[name='nuevo']:checked").val();
+        var eco = jQuery("input[name='eco']:checked").val();
+        
+        var propiedades = {"lava": lava, "casa": casa, "secadora": secadora, "nuevo": nuevo, "eco": eco}; //pasamos todo via json
+
+        jQuery('#divResultado').css("display", "none");
+
+        jQuery('#loading').html('<img src="http://www.gifmania.com/Gif-Animados-Web/Imagenes-Rotulos-Webs/Rotulos-Cargando/Circulo-Carga-62157.gif" class="loading" />  ');
+        jQuery.ajax({
+           url: "<?php echo Mage::getUrl('elegir-mi-electrodomestico/lavadoras/guardar') ?>",
+           type: "POST",
+           data: propiedades,
+           success: function(data){
+               jQuery('#loading').hide();
+               jQuery('#divResultado').slideDown('slow');
+               if (data == '1'){
+                   vaciarCampos();
+                   jQuery('.no-results').html('Lamentamos informarle que no hemos podido conseguir una lavadora que se adapte a sus necesidades, si lo prefiere puede volver a realizar el test');
+               }
+               else{
+                    var resul = JSON.parse(data);
+                    vaciarCampos();
+                    for (var i=0; i <= resul.length; i++){
+                        jQuery('#res' + i).html('<a href="'+ resul[i].url +'"><img src="' + resul[i].image + '" /></a><p class="lead">' + resul[i].nombre + '</p>');
+                        //PARA ELEGIR
+                        //precio = resul[i].precio
+                        //descripcion_corta = resul[i].desc_corta
+                    }
+               }
+           }
+        });
+    }
+    
+</script>

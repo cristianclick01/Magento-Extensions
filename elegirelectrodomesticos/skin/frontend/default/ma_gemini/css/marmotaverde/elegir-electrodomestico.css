@@ -1,0 +1,73 @@
+/*
+Autor de la extension: Cristian
+*/
+
+
+.sombrear_cuadros {
+    -moz-box-shadow: 3px 5px 5px #cfcfc6;
+    -webkit-box-shadow: 3px 5px 5px #cfcfc6;
+    box-shadow: 3px 5px 5px #cfcfc6;
+}
+
+.panel-cuestionario {
+    margin: 30px;
+    border-radius: 5px;
+    border: 2px solid #428bca;
+}
+
+#pregunta-1,
+#pregunta-2,
+#pregunta-3,
+#pregunta-4,
+#pregunta-5 {
+    display: none;
+}
+
+.questioncontent {
+    border-right: 1px dotted #dedede;
+}
+
+.questioncontent .lead {
+    width: 89%;
+}
+
+.panel-body div {
+    margin:10px;
+}
+
+input {
+    margin: 5px;
+    margin-right: 5%;
+}
+
+button {
+    margin: 5px;
+    margin-right: 5%;
+}
+
+.loading {
+    width: 37px;
+    margin-right: 5px;
+    float: right;
+}
+
+.qimage {
+    margin-left: 40%;
+}
+
+
+#divResultado {
+    display: none;
+}
+
+.panel-indice {
+    height: auto;
+    padding: 20px 20px 50px 150px;
+    margin: 30px 10px 0 10px;
+}
+
+.no-results {
+    color: red;
+    font-weight: bold;
+    font-size:16px;
+}

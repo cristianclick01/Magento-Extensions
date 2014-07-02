@@ -1,0 +1,157 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div class="panel panel-primary sombrear_cuadros panel-cuestionario">
+    <div class="panel-heading">Contesta a las siguientes preguntas y nosotros te daremos la mejor opci&oacute;n.</div>
+    <div class="panel-body">
+        <div id="pregunta-1" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> CUANTOS SOIS EN CASA? </p>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="casa" id="casa1" value="1" checked>
+                            <p>De 1 a 2 personas</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="casa" id="casa2" value="2">
+                          <p>m&aacute;s de 3 personas</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-1', 'pregunta-2')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/familia.png') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+        <div id="pregunta-2" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> TE PREOCUPA REALMENTE EL MEDIO AMBIENTE? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco1" value="1" checked>
+                          <p>Si, por encima de todo</p>
+                        </label>
+                     </div>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco2" value="2" checked>
+                          <p>Si, pero prefiero ahorrar en la compra de mi secadora</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco3" value="3">
+                          <p>Si, pero es m&aacute;s importante cuidar mi bolsillo.</p>
+                        </label>
+                     </div>
+                    <div id="loading"></div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-2', 'pregunta-1')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-2', 'pregunta-3')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/ahorro_energia.png') ?>" width="200px" class="qimage "/>
+            </div>
+        </div>
+
+
+        <div id="pregunta-3" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> TIENES POSIBILIDAD DE DARLE SALIDA AL EXTERIOR? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="salida" id="salida1" value="true" checked>
+                          <p>Si</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="salida" id="salida2" value="false">
+                          <p>No</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-3', 'pregunta-2')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-3', 'pregunta-4')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/secadora.jpg') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+        <div id="pregunta-4" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> USAS FRECUENTEMENTE TU SECADORA? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="uso" id="uso1" value="1" checked>
+                          <p>Si</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="uso" id="uso2" value="2">
+                          <p>No, pocas veces</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-4', 'pregunta-3')" />
+                    <button class="btn btn-primary" onclick="getRespuestas()"><span class="glyphicon glyphicon-play"></span>Ver resultados</button>
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/pinzas.png') ?>" width="270px" class="qimage "/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<?php //LLAMAMOS AL METODO SAVE DEL CONTROLADOR DE LA EXTENSION PASANDOLE VIA AJAX LAS RESPUESTAS ?>
+<script type="text/javascript">
+    function getRespuestas(){
+        var salida = jQuery("input[name='salida']:checked").val();
+        var uso = jQuery("input[name='uso']:checked").val();
+        var eco = jQuery("input[name='eco']:checked").val();
+        
+        var propiedades = {"salida": salida, "uso": uso, "eco": eco}; //pasamos todo via json
+
+        jQuery('#divResultado').css("display", "none");
+
+        jQuery('#loading').html('<img src="http://www.gifmania.com/Gif-Animados-Web/Imagenes-Rotulos-Webs/Rotulos-Cargando/Circulo-Carga-62157.gif" class="loading" />  ');
+        jQuery.ajax({
+           url: "<?php echo Mage::getUrl('elegir-mi-electrodomestico/secadoras/guardar') ?>",
+           type: "POST",
+           data: propiedades,
+           success: function(data){
+               jQuery('#loading').hide();
+               jQuery('#divResultado').slideDown('slow');
+
+               if (data == '1'){
+                   vaciarCampos();
+                   jQuery('.no-results').html('Lamentamos informarle que no hemos podido conseguir una secadora que se adapte a sus necesidades, si lo prefiere puede volver a realizar el test');
+               }
+               else{
+                    var resul = JSON.parse(data);
+                    vaciarCampos();
+                    for (var i=0; i <= resul.length; i++){
+                        jQuery('#res' + i).html('<a href="'+ resul[i].url +'"><img src="' + resul[i].image + '" /></a><p class="lead">' + resul[i].nombre + '</p>');
+                        //PARA ELEGIR
+                        //precio = resul[i].precio
+                        //descripcion_corta = resul[i].desc_corta
+                    }
+               }
+               
+           }
+        });
+    }
+    
+</script>

@@ -1,0 +1,180 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div class="panel panel-primary sombrear_cuadros panel-cuestionario">
+    <div class="panel-heading">Contesta a las siguientes preguntas y nosotros te daremos la mejor opci&oacute;n.</div>
+    <div class="panel-body">
+        <div id="pregunta-1" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> CUANTOS SOIS EN CASA? </p>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="casa" id="casa1" value="1" checked>
+                            <p>De 1 a 2 personas</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="casa" id="casa2" value="2">
+                          <p>3 personas</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="casa" id="casa3" value="3">
+                          <p>4 o m&aacute;s personas</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-1', 'pregunta-2')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/familia.png') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+        <div id="pregunta-2" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> CONSUMES HABITULAMENTE ALIMENTOS CONGELADOS?</p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="congelado" id="congelado1" value="true" checked>
+                          <p>Si</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="congelado" id="congelado2" value="false">
+                          <p>No</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-2', 'pregunta-1')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-2', 'pregunta-3')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/fresa.jpg') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+
+        <div id="pregunta-3" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> TE IMPORTA REALMENTE EL DISE&Ntilde;O DE TU COCINA? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="diseno" id="diseno1" value="true" checked>
+                          <p>Si</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="diseno" id="diseno2" value="false">
+                          <p>No</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-3', 'pregunta-2')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-3', 'pregunta-4')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/diseno_frigo.jpg') ?>" width="300px" class="qimage "/>
+            </div>
+        </div>
+
+        <div id="pregunta-4" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> EN QUE ZONA VIVES? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="zona" id="zona1" value="1" checked>
+                          <p>Playa</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="zona" id="zona2" value="2">
+                          <p>Monta&ntilde;a</p>
+                        </label>
+                     </div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-4', 'pregunta-3')" />
+                    <input type="button" value="Siguiente" class="btn btn-primary" onclick="siguientePregunta('pregunta-4', 'pregunta-5')" />
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/lugar.png') ?>" width="270px" class="qimage "/>
+            </div>
+        </div>
+
+
+        <div id="pregunta-5" class="row-fluid">
+            <div class="span6">
+                <div class="questioncontent">
+                    <p class="lead"> TE PREOCUPA REALMENTE EL MEDIO AMBIENTE? </p>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco1" value="1" checked>
+                          <p>Si, por encima de todo</p>
+                        </label>
+                     </div>
+                    <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco2" value="2" checked>
+                          <p>Si, pero prefiero ahorrar en la compra de mi frigor&iacute;fico</p>
+                        </label>
+                     </div>
+                     <div class="radio">
+                        <label>
+                          <input type="radio" name="eco" id="eco3" value="3">
+                          <p>No</p>
+                        </label>
+                     </div>
+                    <div id="loading"></div>
+                    <input type="button" value="Anterior" class="btn btn-primary" onclick="siguientePregunta('pregunta-5', 'pregunta-4')" />
+                    <button class="btn btn-primary" onclick="getRespuestas()"><span class="glyphicon glyphicon-play"></span>Ver resultados</button>
+                </div>
+            </div>
+            <div class="span3">
+                <img src="<?php echo $this->getSkinUrl('images/electrodomesticos/ahorro_energia.png') ?>" width="200px" class="qimage "/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<?php //LLAMAMOS AL METODO SAVE DEL CONTROLADOR DE LA EXTENSION PASANDOLE VIA AJAX LAS RESPUESTAS ?>
+<script type="text/javascript">
+    function getRespuestas(){
+        var casa = jQuery("input[name='casa']:checked").val();
+        var congelado = jQuery("input[name='congelado']:checked").val();
+        var diseno = jQuery("input[name='diseno']:checked").val();
+        var zona = jQuery("input[name='zona']:checked").val();
+        var eco = jQuery("input[name='eco']:checked").val();
+        
+        var propiedades = {"casa": casa, "congelado": congelado, "diseno": diseno, "zona": zona, "eco": eco}; //pasamos todo via json
+
+        jQuery('#divResultado').css("display", "none");
+
+        jQuery('#loading').html('<img src="http://www.gifmania.com/Gif-Animados-Web/Imagenes-Rotulos-Webs/Rotulos-Cargando/Circulo-Carga-62157.gif" class="loading" />  ');
+        jQuery.ajax({
+           url: "<?php echo Mage::getUrl('elegir-mi-electrodomestico/frigorificos/guardar') ?>",
+           type: "POST",
+           data: propiedades,
+           success: function(data){
+               jQuery('#loading').hide();
+               var resul = JSON.parse(data);
+               vaciarCampos();
+               for (var i=0; i <= resul.length; i++){
+                   jQuery('#divResultado').slideDown('slow');
+                   jQuery('#res' + i).html('<a href="'+ resul[i].url +'"><img src="' + resul[i].image + '" /></a><p class="lead">' + resul[i].nombre + '<p>');
+               }
+           }
+        });
+    }
+    
+</script>

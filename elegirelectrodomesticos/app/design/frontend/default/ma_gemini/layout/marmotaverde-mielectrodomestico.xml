@@ -1,0 +1,64 @@
+<layout version="0.1.0">
+     <default>
+         <reference name="head">
+             <action method="addItem"><type>skin_css</type><file>css/marmotaverde/elegir-electrodomestico.css</file></action>
+             <action method="addJs"><script async="true">mv_electrodomesticos/functions.js</script></action>
+         </reference>
+     </default>
+      
+     <ruta_index_index>
+           <reference name="root">
+	       <action method="setTemplate"><template>page/1column.phtml</template></action>
+           </reference>
+           <reference name="content">
+                <block type="elegirelectro/lavadora" name="Indice" template="elegir-mi-electrodomestico/form.phtml" />
+           </reference>
+      </ruta_index_index>
+      
+      <ruta_lavadoras_index>
+           <reference name="root">
+	       <action method="setTemplate"><template>page/1column.phtml</template></action>
+           </reference>           <reference name="content">
+                <block type="elegirelectro/lavadora" name="Lavadoras" template="elegir-mi-electrodomestico/producto/lavadoras.phtml" />
+                <block type="core/template" name="resultado" as="resultado" template="elegir-mi-electrodomestico/producto/resultado.phtml">
+                    <label>Resultado</label>
+                </block>
+           </reference>
+      </ruta_lavadoras_index>
+      
+      <ruta_frigorificos_index>
+           <reference name="root">
+	       <action method="setTemplate"><template>page/1column.phtml</template></action>
+           </reference>
+           <reference name="content">
+                <block type="elegirelectro/frigorifico" name="Frigorificos" template="elegir-mi-electrodomestico/producto/frigorificos.phtml" />
+                <block type="core/template" name="resultado" as="resultado" template="elegir-mi-electrodomestico/producto/resultado.phtml">
+                    <label>Resultado</label>
+                </block>
+           </reference>
+      </ruta_frigorificos_index>
+      
+      <ruta_secadoras_index>
+           <reference name="root">
+	       <action method="setTemplate"><template>page/1column.phtml</template></action>
+           </reference>
+           <reference name="content">
+                <block type="elegirelectro/secadora" name="Secadoras" template="elegir-mi-electrodomestico/producto/secadoras.phtml" />
+                <block type="core/template" name="resultado" as="resultado" template="elegir-mi-electrodomestico/producto/resultado.phtml">
+                    <label>Resultado</label>
+                </block>
+           </reference>
+      </ruta_secadoras_index>
+      
+      <ruta_lavavajillas_index>
+           <reference name="root">
+	       <action method="setTemplate"><template>page/1column.phtml</template></action>
+           </reference>               
+           <reference name="content">
+                <block type="elegirelectro/lavavajilla" name="Lavavajilla" template="elegir-mi-electrodomestico/producto/lavavajillas.phtml" />
+                <block type="core/template" name="resultado" as="resultado" template="elegir-mi-electrodomestico/producto/resultado.phtml">
+                    <label>Resultado</label>
+                </block>
+           </reference>
+      </ruta_lavavajillas_index>
+</layout>

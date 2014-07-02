@@ -1,0 +1,14 @@
+<?xml version = "1.0"?>
+   <config>
+      <modules>
+        <Marmotaverde_Prueba>
+            <active>true</active>
+            <codePool>local</codePool>
+         </Marmotaverde_Prueba>
+         
+         <Marmotaverde_ElegirElectro>
+            <active>true</active>
+            <codePool>local</codePool>
+         </Marmotaverde_ElegirElectro>
+       </modules>
+    </config>
